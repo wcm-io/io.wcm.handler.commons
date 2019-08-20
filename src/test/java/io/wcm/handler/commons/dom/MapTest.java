@@ -17,8 +17,21 @@
  * limitations under the License.
  * #L%
  */
-/**
- * Helper classes for components.
- */
-@org.osgi.annotation.versioning.Version("1.0.0")
-package io.wcm.handler.commons.component;
+package io.wcm.handler.commons.dom;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import org.junit.jupiter.api.Test;
+
+class MapTest {
+
+  @Test
+  void testSimpleAttributes() throws Exception {
+    Map map = new Map();
+    assertEquals("map", map.getName());
+
+    map.setMapName("name1");
+    assertEquals("name1", map.getMapName());
+  }
+
+}

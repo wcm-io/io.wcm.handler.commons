@@ -22,19 +22,38 @@ package io.wcm.handler.commons.dom;
 import org.osgi.annotation.versioning.ProviderType;
 
 /**
- * Html picture element.
+ * Html map element.
  */
 @ProviderType
-public final class Picture extends AbstractNonSelfClosingHtmlElement<Picture> {
+public final class Map extends AbstractNonSelfClosingHtmlElement<Map> {
   private static final long serialVersionUID = 1L;
 
-  private static final String ELEMENT_NAME = "picture";
+  private static final String ELEMENT_NAME = "map";
+  private static final String ATTRIBUTE_NAME = "name";
 
   /**
    * Initializes html element.
    */
-  public Picture() {
+  public Map() {
     super(ELEMENT_NAME);
+  }
+
+  /**
+   * Html "name" attribute.
+   * @return Value of attribute
+   */
+  public String getMapName() {
+    return getAttributeValue(ATTRIBUTE_NAME);
+  }
+
+  /**
+   * Html "name" attribute.
+   * @param value Value of attribute
+   * @return Self reference
+   */
+  public Map setMapName(String value) {
+    setAttribute(ATTRIBUTE_NAME, value);
+    return this;
   }
 
 }

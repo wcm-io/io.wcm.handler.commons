@@ -2,7 +2,7 @@
  * #%L
  * wcm.io
  * %%
- * Copyright (C) 2014 wcm.io
+ * Copyright (C) 2019 wcm.io
  * %%
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,24 +23,36 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
 
-class SourceTest {
+class AreaTest {
 
   @Test
   void testSimpleAttributes() throws Exception {
-    Source source = new Source();
-    assertEquals("source", source.getName());
+    Area area = new Area();
+    assertEquals("area", area.getName());
 
-    source.setMedia("media1");
-    source.setSrc("ref1");
-    source.setType("type1");
-    source.setSrcSet("srcset1");
-    source.setSizes("sizes1");
+    area.setRel("rel1");
+    assertEquals("rel1", area.getRel());
 
-    assertEquals("media1", source.getMedia());
-    assertEquals("ref1", source.getSrc());
-    assertEquals("type1", source.getType());
-    assertEquals("srcset1", source.getSrcSet());
-    assertEquals("sizes1", source.getSizes());
+    area.setHRef("ref1");
+    assertEquals("ref1", area.getHRef());
+
+    area.setTarget("target1");
+    assertEquals("target1", area.getTarget());
+
+    area.setTabIndex(5);
+    assertEquals(5, area.getTabIndex());
+
+    area.setAccessKey("key1");
+    assertEquals("key1", area.getAccessKey());
+
+    area.setAlt("alt1");
+    assertEquals("alt1", area.getAlt());
+
+    area.setShape("shape1");
+    assertEquals("shape1", area.getShape());
+
+    area.setCoords("coords1");
+    assertEquals("coords1", area.getCoords());
   }
 
 }
