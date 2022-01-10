@@ -33,6 +33,10 @@ To use this module you have to deploy also:
 | [wcm.io WCM Granite UI Extensions](https://maven-badges.herokuapp.com/maven-central/io.wcm/io.wcm.wcm.ui.granite) | [![Maven Central](https://maven-badges.herokuapp.com/maven-central/io.wcm/io.wcm.wcm.ui.granite/badge.svg)](https://maven-badges.herokuapp.com/maven-central/io.wcm/io.wcm.wcm.ui.granite) |
 
 
+### GitHub Repository
+
+Sources: https://github.com/wcm-io/io.wcm.handler.commons
+
 
 [apidocs]: apidocs/
 [changelog]: changes-report.html
