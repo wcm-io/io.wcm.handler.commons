@@ -2,6 +2,7 @@
 ======
 [![Build](https://github.com/wcm-io/io.wcm.handler.commons/workflows/Build/badge.svg?branch=develop)](https://github.com/wcm-io/io.wcm.handler.commons/actions?query=workflow%3ABuild+branch%3Adevelop)
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/io.wcm/io.wcm.handler.commons/badge.svg)](https://maven-badges.herokuapp.com/maven-central/io.wcm/io.wcm.handler.commons)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=wcm-io_io.wcm.handler.commons&metric=coverage)](https://sonarcloud.io/summary/new_code?id=wcm-io_io.wcm.handler.commons)
 
 Functionality shared by the handler implementations.
 
