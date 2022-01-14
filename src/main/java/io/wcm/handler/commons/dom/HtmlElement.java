@@ -150,7 +150,7 @@ public class HtmlElement<T extends HtmlElement> extends AbstractHtmlElementFacto
    * @return Returns map of style key/value pairs.
    */
   public final Map<String, String> getStyles() {
-    Map<String, String> styleMap = new HashMap<String, String>();
+    Map<String, String> styleMap = new HashMap<>();
 
     // de-serialize style string, fill style map
     String styleString = getStyleString();
@@ -200,7 +200,7 @@ public class HtmlElement<T extends HtmlElement> extends AbstractHtmlElementFacto
 
     // Serialize style string
     StringBuilder styleString = new StringBuilder();
-    for (Map.Entry style : styleMap.entrySet()) {
+    for (Map.Entry<String, String> style : styleMap.entrySet()) {
       styleString.append(style.getKey());
       styleString.append(':');
       styleString.append(style.getValue());
