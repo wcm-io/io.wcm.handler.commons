@@ -61,7 +61,7 @@ public class HtxPageExtensionMapper extends SlingSafeMethodsServlet {
 
   @ObjectClassDefinition(name = "wcm.io htx Page Extension Mapper",
       description = "Mapps all *.htx requests on Pages to *.html view.")
-  static @interface Config {
+  @interface Config {
 
     @AttributeDefinition(name = "Enabled", description = "Enable mapping.")
     boolean enabled() default false;
