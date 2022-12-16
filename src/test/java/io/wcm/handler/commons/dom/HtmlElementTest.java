@@ -24,13 +24,12 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.Collection;
+import java.util.Set;
 
 import org.jdom2.Content;
 import org.jdom2.Namespace;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import com.google.common.collect.ImmutableSet;
 
 class HtmlElementTest {
 
@@ -60,7 +59,7 @@ class HtmlElementTest {
 
   @Test
   void testAddContent() {
-    underTest.addContent(ImmutableSet.of(new Image(), new Div()));
+    underTest.addContent(Set.of(new Image(), new Div()));
     underTest.addContent((Collection)null);
 
     underTest.addContent(new Image());
@@ -69,7 +68,7 @@ class HtmlElementTest {
     underTest.addContent("text");
     underTest.addContent((String)null);
 
-    underTest.addContent(0, ImmutableSet.of(new Image(), new Div()));
+    underTest.addContent(0, Set.of(new Image(), new Div()));
     underTest.addContent(0, (Collection)null);
 
     underTest.addContent(0, new Image());

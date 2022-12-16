@@ -31,7 +31,6 @@ import org.apache.sling.commons.json.io.JSONWriter;
 import org.junit.jupiter.api.Test;
 
 import com.day.cq.wcm.api.components.DropTarget;
-import com.google.common.collect.ImmutableMap;
 
 @SuppressWarnings("deprecation")
 class DropTargetImplTest {
@@ -58,7 +57,7 @@ class DropTargetImplTest {
     String[] accept = new String[] {
         "image/gif"
     };
-    Map<String, String> params = ImmutableMap.of("param1", "value1", "param2", "value2");
+    Map<String, String> params = Map.of("param1", "value1", "param2", "value2");
 
     DropTargetImpl underTest = new DropTargetImpl("testName", "prop1");
     underTest.setGroups(groups);

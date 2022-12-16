@@ -19,6 +19,7 @@
  */
 package io.wcm.handler.commons.editcontext;
 
+import java.util.Collections;
 import java.util.Map;
 
 import org.apache.sling.commons.json.JSONException;
@@ -26,7 +27,6 @@ import org.apache.sling.commons.json.io.JSONWriter;
 import org.osgi.annotation.versioning.ProviderType;
 
 import com.day.cq.wcm.api.components.DropTarget;
-import com.google.common.collect.ImmutableMap;
 
 /**
  * {@link DropTarget} implementation.
@@ -42,7 +42,7 @@ public final class DropTargetImpl implements DropTarget {
   private String[] accept = new String[] {
       "*"
   };
-  private Map<String, String> parameters = ImmutableMap.of();
+  private Map<String, String> parameters = Collections.emptyMap();
 
   /**
    * @param name drop target name
