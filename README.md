@@ -7,7 +7,7 @@
 Functionality shared by the handler implementations.
 
 Documentation: https://wcm.io/handler/commons/<br/>
-Issues: https://wcm-io.atlassian.net/projects/WHAN<br/>
+Issues: https://github.com/wcm-io/io.wcm.handler.commons/issues<br/>
 Wiki: https://wcm-io.atlassian.net/wiki/<br/>
 Continuous Integration: https://github.com/wcm-io/io.wcm.handler.commons/actions<br/>
 Commercial support: https://wcm.io/commercial-support.html
