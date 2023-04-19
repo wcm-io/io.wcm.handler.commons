@@ -31,7 +31,7 @@
 
   <groupId>io.wcm</groupId>
   <artifactId>io.wcm.handler.commons</artifactId>
-  <version>1.4.5-SNAPSHOT</version>
+  <version>1.5.0</version>
   <packaging>jar</packaging>
 
   <name>Handler Commons</name>
@@ -51,7 +51,7 @@
     <jdom2.version>2.0.6.1</jdom2.version>
 
     <!-- Enable reproducible builds -->
-    <project.build.outputTimestamp>2021-12-18T09:31:53Z</project.build.outputTimestamp>
+    <project.build.outputTimestamp>2023-04-19T11:11:09Z</project.build.outputTimestamp>
   </properties>
 
   <dependencies>
