@@ -32,6 +32,10 @@ import com.day.cq.wcm.api.components.DropTarget;
  * {@link DropTarget} implementation.
  */
 @ProviderType
+/*
+ * deprecated Sling JSON API tied into AEM public API:
+ * https://developer.adobe.com/experience-manager/reference-materials/6-5/javadoc/com/day/cq/commons/JSONItem.html
+ */
 @SuppressWarnings("deprecation")
 public final class DropTargetImpl implements DropTarget {
 
