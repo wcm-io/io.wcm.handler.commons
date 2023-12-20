@@ -42,7 +42,6 @@ class HtmlElementTest {
     underTest = new HtmlElement("test");
   }
 
-  @SuppressWarnings("deprecation")
   @Test
   void testName() {
     assertEquals("test", underTest.getName());

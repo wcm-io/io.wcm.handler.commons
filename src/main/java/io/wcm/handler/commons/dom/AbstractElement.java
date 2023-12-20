@@ -52,18 +52,6 @@ public abstract class AbstractElement<T extends AbstractElement> extends org.jdo
   }
 
   /**
-   * Sets element name - should not be used for HtmlElement-derived classes!
-   * @param value Element name
-   * @return Self reference
-   * @deprecated Deprecated
-   */
-  @Override
-  @Deprecated
-  public final org.jdom2.Element setName(String value) {
-    return super.setName(value);
-  }
-
-  /**
    * Gets attribute value as integer.
    * @param attributeName Attribute name
    * @return Attribute value as integer or 0 if not set.

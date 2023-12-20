@@ -15,6 +15,7 @@ Functionality shared by the handler implementations.
 
 |Handler Commons version |AEM version supported
 |------------------------|----------------------
+|2.0.x or higher         |AEM 6.5.17+, AEMaaCS
 |1.5.x or higher         |AEM 6.5.7+, AEMaaCS
 |1.4.x                   |AEM 6.4.5+, AEMaaCS
 |1.1.x - 1.3.x           |AEM 6.2+
