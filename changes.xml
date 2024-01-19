@@ -27,6 +27,9 @@
       <action type="remove" dev="sseifert" issue="1">
         Remove deprecated functionality.
       </action>
+      <action type="update" dev="sseifert" issue="3">
+        DOM: Remove generic from HtmlElement class.
+      </action>
       <action type="update" dev="sseifert">
         Switch to AEM 6.5.17 as minimum version.
       </action>

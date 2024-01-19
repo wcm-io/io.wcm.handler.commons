@@ -19,6 +19,7 @@
  */
 package io.wcm.handler.commons.dom;
 
+import static io.wcm.handler.commons.dom.TestUtil.assertDefaultMethodsSkipText;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -40,6 +41,11 @@ class ScriptTest {
     Script script2 = new Script("text1");
     assertTrue(script2.getText().contains("text1"));
 
+  }
+
+  @Test
+  void testDefaultMethods() {
+    assertDefaultMethodsSkipText(new Script());
   }
 
 }

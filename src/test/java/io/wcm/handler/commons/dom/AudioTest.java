@@ -19,6 +19,7 @@
  */
 package io.wcm.handler.commons.dom;
 
+import static io.wcm.handler.commons.dom.TestUtil.assertDefaultMethods;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
@@ -44,6 +45,11 @@ class AudioTest {
 
     audio.setSrc("ref1");
     assertEquals("ref1", audio.getSrc());
+  }
+
+  @Test
+  void testDefaultMethods() {
+    assertDefaultMethods(new Audio());
   }
 
 }
