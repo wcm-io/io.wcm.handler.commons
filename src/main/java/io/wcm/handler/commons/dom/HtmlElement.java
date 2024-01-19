@@ -30,8 +30,8 @@ import org.osgi.annotation.versioning.ConsumerType;
  * This element class is an extension of JDOM Element.
  * @param <T> Class derived from HtmlElement
  */
-@SuppressWarnings("unchecked")
 @ConsumerType
+@SuppressWarnings("java:S110") // # parent inheritance
 public class HtmlElement<T extends HtmlElement> extends AbstractHtmlElementFactory<T> {
   private static final long serialVersionUID = 1L;
 
@@ -76,6 +76,7 @@ public class HtmlElement<T extends HtmlElement> extends AbstractHtmlElementFacto
    * @param value Attribute value as boolean
    * @return Self reference
    */
+  @SuppressWarnings("unchecked")
   protected final T setEmptyAttributeValueAsBoolean(String attributeName, boolean value) {
     if (value) {
       setAttribute(attributeName, attributeName.toLowerCase());
@@ -99,6 +100,7 @@ public class HtmlElement<T extends HtmlElement> extends AbstractHtmlElementFacto
    * @param value Value of attribute
    * @return Self reference
    */
+  @SuppressWarnings("unchecked")
   public final T setId(String value) {
     setAttribute(ATTRIBUTE_ID, value);
     return (T)this;
@@ -118,6 +120,7 @@ public class HtmlElement<T extends HtmlElement> extends AbstractHtmlElementFacto
    * @param value Value of attribute
    * @return Self reference
    */
+  @SuppressWarnings("unchecked")
   public final T setCssClass(String value) {
     setAttribute(ATTRIBUTE_CLASS, value);
     return (T)this;
@@ -128,6 +131,7 @@ public class HtmlElement<T extends HtmlElement> extends AbstractHtmlElementFacto
    * @param value Value of attribute
    * @return Self reference
    */
+  @SuppressWarnings("unchecked")
   public final T addCssClass(String value) {
     if (StringUtils.isNotEmpty(value)) {
       return setCssClass(StringUtils.isNotEmpty(getCssClass()) ? getCssClass() + " " + value : value);
@@ -181,6 +185,7 @@ public class HtmlElement<T extends HtmlElement> extends AbstractHtmlElementFacto
    * @param value Value of attribute with style key/value pairs
    * @return Self reference
    */
+  @SuppressWarnings("unchecked")
   public final T setStyleString(String value) {
     setAttribute(ATTRIBUTE_STYLE, value);
     return (T)this;
@@ -192,6 +197,7 @@ public class HtmlElement<T extends HtmlElement> extends AbstractHtmlElementFacto
    * @param styleValue Style attribute value
    * @return Self reference
    */
+  @SuppressWarnings("unchecked")
   public final T setStyle(String styleAttribute, String styleValue) {
 
     // Add style to style map
@@ -223,6 +229,7 @@ public class HtmlElement<T extends HtmlElement> extends AbstractHtmlElementFacto
    * @param value Value of attribute
    * @return Self reference
    */
+  @SuppressWarnings("unchecked")
   public final T setTitle(String value) {
     setAttribute(ATTRIBUTE_TITLE, value);
     return (T)this;
@@ -243,6 +250,7 @@ public class HtmlElement<T extends HtmlElement> extends AbstractHtmlElementFacto
    * @param value Value of attribute
    * @return Self reference
    */
+  @SuppressWarnings("unchecked")
   public final T setData(String attributeName, String value) {
     setAttribute(ATTRIBUTE_DATA_PREFIX + attributeName, value);
     return (T)this;

@@ -25,6 +25,7 @@ import org.osgi.annotation.versioning.ProviderType;
  * Html source (source) element.
  */
 @ProviderType
+@SuppressWarnings("java:S110") // # parent inheritance
 public class Source extends HtmlElement<Source> {
   private static final long serialVersionUID = 1L;
 

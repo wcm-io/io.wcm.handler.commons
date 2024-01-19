@@ -25,6 +25,7 @@ import org.osgi.annotation.versioning.ProviderType;
  * Html picture element.
  */
 @ProviderType
+@SuppressWarnings("java:S110") // # parent inheritance
 public final class Picture extends AbstractNonSelfClosingHtmlElement<Picture> {
   private static final long serialVersionUID = 1L;
 

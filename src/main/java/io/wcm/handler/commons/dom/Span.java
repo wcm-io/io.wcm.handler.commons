@@ -25,6 +25,7 @@ import org.osgi.annotation.versioning.ProviderType;
  * Html span element.
  */
 @ProviderType
+@SuppressWarnings("java:S110") // # parent inheritance
 public final class Span extends AbstractNonSelfClosingHtmlElement<Span> {
   private static final long serialVersionUID = 1L;
 

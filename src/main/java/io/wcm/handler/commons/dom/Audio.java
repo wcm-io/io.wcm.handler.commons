@@ -25,6 +25,7 @@ import org.osgi.annotation.versioning.ProviderType;
  * Html audio (audio) element.
  */
 @ProviderType
+@SuppressWarnings("java:S110") // # parent inheritance
 public final class Audio extends AbstractNonSelfClosingHtmlElement<Audio> {
   private static final long serialVersionUID = 1L;
 

@@ -25,6 +25,7 @@ import org.osgi.annotation.versioning.ProviderType;
  * Html map element.
  */
 @ProviderType
+@SuppressWarnings("java:S110") // # parent inheritance
 public final class Map extends AbstractNonSelfClosingHtmlElement<Map> {
   private static final long serialVersionUID = 1L;
 

@@ -25,6 +25,7 @@ import org.osgi.annotation.versioning.ProviderType;
  * Html div element.
  */
 @ProviderType
+@SuppressWarnings("java:S110") // # parent inheritance
 public final class Div extends AbstractNonSelfClosingHtmlElement<Div> {
   private static final long serialVersionUID = 1L;
 
