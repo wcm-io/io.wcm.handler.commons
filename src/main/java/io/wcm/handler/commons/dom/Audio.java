@@ -26,7 +26,7 @@ import org.osgi.annotation.versioning.ProviderType;
  */
 @ProviderType
 @SuppressWarnings("java:S110") // # parent inheritance
-public final class Audio extends AbstractNonSelfClosingHtmlElement<Audio> {
+public final class Audio extends AbstractNonSelfClosingHtmlElement {
   private static final long serialVersionUID = 1L;
 
   private static final String ELEMENT_NAME = "audio";
@@ -132,6 +132,58 @@ public final class Audio extends AbstractNonSelfClosingHtmlElement<Audio> {
   public Audio setSrc(String value) {
     setAttribute(ATTRIBUTE_SRC, value);
     return this;
+  }
+
+  // -- overwrite methods for builder pattern with covariant return types --
+
+  @Override
+  protected Audio setEmptyAttributeValueAsBoolean(String attributeName, boolean value) {
+    return (Audio)super.setEmptyAttributeValueAsBoolean(attributeName, value);
+  }
+
+  @Override
+  public Audio setId(String value) {
+    return (Audio)super.setId(value);
+  }
+
+  @Override
+  public Audio setCssClass(String value) {
+    return (Audio)super.setCssClass(value);
+  }
+
+  @Override
+  public Audio addCssClass(String value) {
+    return (Audio)super.addCssClass(value);
+  }
+
+  @Override
+  public Audio setStyleString(String value) {
+    return (Audio)super.setStyleString(value);
+  }
+
+  @Override
+  public Audio setStyle(String styleAttribute, String styleValue) {
+    return (Audio)super.setStyle(styleAttribute, styleValue);
+  }
+
+  @Override
+  public Audio setTitle(String value) {
+    return (Audio)super.setTitle(value);
+  }
+
+  @Override
+  public Audio setData(String attributeName, String value) {
+    return (Audio)super.setData(attributeName, value);
+  }
+
+  @Override
+  public Audio setAttributeValueAsLong(String name, long value) {
+    return (Audio)super.setAttributeValueAsLong(name, value);
+  }
+
+  @Override
+  public Audio setText(String text) {
+    return (Audio)super.setText(text);
   }
 
 }

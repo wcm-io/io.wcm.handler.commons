@@ -28,11 +28,10 @@ import org.osgi.annotation.versioning.ConsumerType;
 /**
  * Html element wrapper object.
  * This element class is an extension of JDOM Element.
- * @param <T> Class derived from HtmlElement
  */
 @ConsumerType
 @SuppressWarnings("java:S110") // # parent inheritance
-public class HtmlElement<T extends HtmlElement> extends AbstractHtmlElementFactory<T> {
+public class HtmlElement extends AbstractHtmlElementFactory {
   private static final long serialVersionUID = 1L;
 
   private static final String ATTRIBUTE_ID = "id";
@@ -76,15 +75,14 @@ public class HtmlElement<T extends HtmlElement> extends AbstractHtmlElementFacto
    * @param value Attribute value as boolean
    * @return Self reference
    */
-  @SuppressWarnings("unchecked")
-  protected final T setEmptyAttributeValueAsBoolean(String attributeName, boolean value) {
+  protected HtmlElement setEmptyAttributeValueAsBoolean(String attributeName, boolean value) {
     if (value) {
       setAttribute(attributeName, attributeName.toLowerCase());
     }
     else {
       removeAttribute(attributeName);
     }
-    return (T)this;
+    return this;
   }
 
   /**
@@ -100,10 +98,9 @@ public class HtmlElement<T extends HtmlElement> extends AbstractHtmlElementFacto
    * @param value Value of attribute
    * @return Self reference
    */
-  @SuppressWarnings("unchecked")
-  public final T setId(String value) {
+  public HtmlElement setId(String value) {
     setAttribute(ATTRIBUTE_ID, value);
-    return (T)this;
+    return this;
   }
 
   /**
@@ -120,10 +117,9 @@ public class HtmlElement<T extends HtmlElement> extends AbstractHtmlElementFacto
    * @param value Value of attribute
    * @return Self reference
    */
-  @SuppressWarnings("unchecked")
-  public final T setCssClass(String value) {
+  public HtmlElement setCssClass(String value) {
     setAttribute(ATTRIBUTE_CLASS, value);
-    return (T)this;
+    return this;
   }
 
   /**
@@ -131,13 +127,12 @@ public class HtmlElement<T extends HtmlElement> extends AbstractHtmlElementFacto
    * @param value Value of attribute
    * @return Self reference
    */
-  @SuppressWarnings("unchecked")
-  public final T addCssClass(String value) {
+  public HtmlElement addCssClass(String value) {
     if (StringUtils.isNotEmpty(value)) {
       return setCssClass(StringUtils.isNotEmpty(getCssClass()) ? getCssClass() + " " + value : value);
     }
     else {
-      return (T)this;
+      return this;
     }
   }
 
@@ -185,10 +180,9 @@ public class HtmlElement<T extends HtmlElement> extends AbstractHtmlElementFacto
    * @param value Value of attribute with style key/value pairs
    * @return Self reference
    */
-  @SuppressWarnings("unchecked")
-  public final T setStyleString(String value) {
+  public HtmlElement setStyleString(String value) {
     setAttribute(ATTRIBUTE_STYLE, value);
-    return (T)this;
+    return this;
   }
 
   /**
@@ -197,8 +191,7 @@ public class HtmlElement<T extends HtmlElement> extends AbstractHtmlElementFacto
    * @param styleValue Style attribute value
    * @return Self reference
    */
-  @SuppressWarnings("unchecked")
-  public final T setStyle(String styleAttribute, String styleValue) {
+  public HtmlElement setStyle(String styleAttribute, String styleValue) {
 
     // Add style to style map
     Map<String, String> styleMap = getStyles();
@@ -213,7 +206,7 @@ public class HtmlElement<T extends HtmlElement> extends AbstractHtmlElementFacto
       styleString.append(';');
     }
     setStyleString(styleString.toString());
-    return (T)this;
+    return this;
   }
 
   /**
@@ -229,10 +222,9 @@ public class HtmlElement<T extends HtmlElement> extends AbstractHtmlElementFacto
    * @param value Value of attribute
    * @return Self reference
    */
-  @SuppressWarnings("unchecked")
-  public final T setTitle(String value) {
+  public HtmlElement setTitle(String value) {
     setAttribute(ATTRIBUTE_TITLE, value);
-    return (T)this;
+    return this;
   }
 
   /**
@@ -250,10 +242,9 @@ public class HtmlElement<T extends HtmlElement> extends AbstractHtmlElementFacto
    * @param value Value of attribute
    * @return Self reference
    */
-  @SuppressWarnings("unchecked")
-  public final T setData(String attributeName, String value) {
+  public HtmlElement setData(String attributeName, String value) {
     setAttribute(ATTRIBUTE_DATA_PREFIX + attributeName, value);
-    return (T)this;
+    return this;
   }
 
 }

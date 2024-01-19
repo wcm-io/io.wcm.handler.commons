@@ -42,7 +42,7 @@ import org.osgi.annotation.versioning.ProviderType;
  */
 @ProviderType
 @SuppressWarnings("java:S110") // # parent inheritance
-public final class Script extends AbstractNonSelfClosingHtmlElement<Script> {
+public final class Script extends AbstractNonSelfClosingHtmlElement {
   private static final long serialVersionUID = 1L;
 
   private static final String ELEMENT_NAME = "script";
@@ -128,6 +128,53 @@ public final class Script extends AbstractNonSelfClosingHtmlElement<Script> {
       this.addContent("\n");
     }
     return this;
+  }
+
+  // -- overwrite methods for builder pattern with covariant return types --
+
+  @Override
+  protected Script setEmptyAttributeValueAsBoolean(String attributeName, boolean value) {
+    return (Script)super.setEmptyAttributeValueAsBoolean(attributeName, value);
+  }
+
+  @Override
+  public Script setId(String value) {
+    return (Script)super.setId(value);
+  }
+
+  @Override
+  public Script setCssClass(String value) {
+    return (Script)super.setCssClass(value);
+  }
+
+  @Override
+  public Script addCssClass(String value) {
+    return (Script)super.addCssClass(value);
+  }
+
+  @Override
+  public Script setStyleString(String value) {
+    return (Script)super.setStyleString(value);
+  }
+
+  @Override
+  public Script setStyle(String styleAttribute, String styleValue) {
+    return (Script)super.setStyle(styleAttribute, styleValue);
+  }
+
+  @Override
+  public Script setTitle(String value) {
+    return (Script)super.setTitle(value);
+  }
+
+  @Override
+  public Script setData(String attributeName, String value) {
+    return (Script)super.setData(attributeName, value);
+  }
+
+  @Override
+  public Script setAttributeValueAsLong(String name, long value) {
+    return (Script)super.setAttributeValueAsLong(name, value);
   }
 
 }

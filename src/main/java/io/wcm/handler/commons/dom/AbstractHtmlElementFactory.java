@@ -25,10 +25,9 @@ import org.osgi.annotation.versioning.ConsumerType;
 /**
  * Contains factory methods for creating and adding Html elements and specialized types.
  * This class cannot be instanciated directly, but provides factory methods for HtmlElement-based classes.
- * @param <T> Class derived from HtmlElement
  */
 @ConsumerType
-public abstract class AbstractHtmlElementFactory<T extends HtmlElement> extends AbstractElement<T> {
+public abstract class AbstractHtmlElementFactory extends AbstractElement {
   private static final long serialVersionUID = 1L;
 
   /**
@@ -44,7 +43,7 @@ public abstract class AbstractHtmlElementFactory<T extends HtmlElement> extends 
    * @param elementName Element name
    * @return Html element.
    */
-  public HtmlElement create(String elementName) {
+  public final HtmlElement create(String elementName) {
     return this.add(new HtmlElement(elementName));
   }
 
@@ -53,7 +52,7 @@ public abstract class AbstractHtmlElementFactory<T extends HtmlElement> extends 
    * @param text Comment
    * @return Html comment.
    */
-  public HtmlComment createComment(String text) {
+  public final HtmlComment createComment(String text) {
     HtmlComment comment = new HtmlComment(text);
     this.addContent(comment);
     return comment;
@@ -63,7 +62,7 @@ public abstract class AbstractHtmlElementFactory<T extends HtmlElement> extends 
    * Creates and adds div element.
    * @return Html element.
    */
-  public Div createDiv() {
+  public final Div createDiv() {
     return this.add(new Div());
   }
 
@@ -71,7 +70,7 @@ public abstract class AbstractHtmlElementFactory<T extends HtmlElement> extends 
    * Creates and adds span element.
    * @return Html element.
    */
-  public Span createSpan() {
+  public final Span createSpan() {
     return this.add(new Span());
   }
 
@@ -80,7 +79,7 @@ public abstract class AbstractHtmlElementFactory<T extends HtmlElement> extends 
    * @param text Text
    * @return Html element.
    */
-  public Span createSpan(String text) {
+  public final Span createSpan(String text) {
     return this.add(new Span(text));
   }
 
@@ -88,7 +87,7 @@ public abstract class AbstractHtmlElementFactory<T extends HtmlElement> extends 
    * Creates and adds anchor (a) element.
    * @return Html element.
    */
-  public Anchor createAnchor() {
+  public final Anchor createAnchor() {
     return this.add(new Anchor());
   }
 
@@ -97,7 +96,7 @@ public abstract class AbstractHtmlElementFactory<T extends HtmlElement> extends 
    * @param href Html "href" attribute.
    * @return Html element.
    */
-  public Anchor createAnchor(String href) {
+  public final Anchor createAnchor(String href) {
     return this.add(new Anchor(href));
   }
 
@@ -107,7 +106,7 @@ public abstract class AbstractHtmlElementFactory<T extends HtmlElement> extends 
    * @param target Html "target" attribute.
    * @return Html element.
    */
-  public Anchor createAnchor(String href, String target) {
+  public final Anchor createAnchor(String href, String target) {
     return this.add(new Anchor(href, target));
   }
 
@@ -115,7 +114,7 @@ public abstract class AbstractHtmlElementFactory<T extends HtmlElement> extends 
    * Creates and adds imgage (img) element.
    * @return Html element.
    */
-  public Image createImage() {
+  public final Image createImage() {
     return this.add(new Image());
   }
 
@@ -124,7 +123,7 @@ public abstract class AbstractHtmlElementFactory<T extends HtmlElement> extends 
    * @param src Html "src" attribute.
    * @return Html element.
    */
-  public Image createImage(String src) {
+  public final Image createImage(String src) {
     return this.add(new Image(src));
   }
 
@@ -134,7 +133,7 @@ public abstract class AbstractHtmlElementFactory<T extends HtmlElement> extends 
    * @param alt Html "alt" attribute.
    * @return Html element.
    */
-  public Image createImage(String src, String alt) {
+  public final Image createImage(String src, String alt) {
     return this.add(new Image(src, alt));
   }
 
@@ -145,7 +144,7 @@ public abstract class AbstractHtmlElementFactory<T extends HtmlElement> extends 
    * @param height Html "height" attribute.
    * @return Html element.
    */
-  public Image createImage(String src, int width, int height) {
+  public final Image createImage(String src, int width, int height) {
     return this.add(new Image(src, width, height));
   }
 
@@ -157,7 +156,7 @@ public abstract class AbstractHtmlElementFactory<T extends HtmlElement> extends 
    * @param height Html "height" attribute.
    * @return Html element.
    */
-  public Image createImage(String src, String alt, int width, int height) {
+  public final Image createImage(String src, String alt, int width, int height) {
     return this.add(new Image(src, alt, width, height));
   }
 
@@ -165,7 +164,7 @@ public abstract class AbstractHtmlElementFactory<T extends HtmlElement> extends 
    * Creates and adds script element.
    * @return Html element.
    */
-  public Script createScript() {
+  public final Script createScript() {
     return this.add(new Script());
   }
 
@@ -174,7 +173,7 @@ public abstract class AbstractHtmlElementFactory<T extends HtmlElement> extends 
    * @param script Script block
    * @return Html element.
    */
-  public Script createScript(String script) {
+  public final Script createScript(String script) {
     return this.add(new Script(script));
   }
 
@@ -182,7 +181,7 @@ public abstract class AbstractHtmlElementFactory<T extends HtmlElement> extends 
    * Creates and adds noscript element.
    * @return Html element.
    */
-  public NoScript createNoScript() {
+  public final NoScript createNoScript() {
     return this.add(new NoScript());
   }
 
@@ -190,7 +189,7 @@ public abstract class AbstractHtmlElementFactory<T extends HtmlElement> extends 
    * Creates and adds figure element.
    * @return Html element.
    */
-  public Figure createFigure() {
+  public final Figure createFigure() {
     return this.add(new Figure());
   }
 
@@ -198,7 +197,7 @@ public abstract class AbstractHtmlElementFactory<T extends HtmlElement> extends 
    * Creates and adds figure caption element.
    * @return Html element.
    */
-  public FigCaption createFigCaption() {
+  public final FigCaption createFigCaption() {
     return this.add(new FigCaption());
   }
 
@@ -206,7 +205,7 @@ public abstract class AbstractHtmlElementFactory<T extends HtmlElement> extends 
    * Creates and adds video element.
    * @return Html element.
    */
-  public Video createVideo() {
+  public final Video createVideo() {
     return this.add(new Video());
   }
 
@@ -214,7 +213,7 @@ public abstract class AbstractHtmlElementFactory<T extends HtmlElement> extends 
    * Creates and adds audio element.
    * @return Html element.
    */
-  public Audio createAudio() {
+  public final Audio createAudio() {
     return this.add(new Audio());
   }
 
@@ -222,7 +221,7 @@ public abstract class AbstractHtmlElementFactory<T extends HtmlElement> extends 
    * Creates and adds source element.
    * @return Html element.
    */
-  public Source createSource() {
+  public final Source createSource() {
     return this.add(new Source());
   }
 

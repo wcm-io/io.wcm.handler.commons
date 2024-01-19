@@ -26,7 +26,7 @@ import org.osgi.annotation.versioning.ProviderType;
  */
 @ProviderType
 @SuppressWarnings("java:S110") // # parent inheritance
-public final class NoScript extends AbstractNonSelfClosingHtmlElement<NoScript> {
+public final class NoScript extends AbstractNonSelfClosingHtmlElement {
 
   private static final long serialVersionUID = 1L;
 
@@ -37,6 +37,58 @@ public final class NoScript extends AbstractNonSelfClosingHtmlElement<NoScript> 
    */
   public NoScript() {
     super(ELEMENT_NAME);
+  }
+
+  // -- overwrite methods for builder pattern with covariant return types --
+
+  @Override
+  protected NoScript setEmptyAttributeValueAsBoolean(String attributeName, boolean value) {
+    return (NoScript)super.setEmptyAttributeValueAsBoolean(attributeName, value);
+  }
+
+  @Override
+  public NoScript setId(String value) {
+    return (NoScript)super.setId(value);
+  }
+
+  @Override
+  public NoScript setCssClass(String value) {
+    return (NoScript)super.setCssClass(value);
+  }
+
+  @Override
+  public NoScript addCssClass(String value) {
+    return (NoScript)super.addCssClass(value);
+  }
+
+  @Override
+  public NoScript setStyleString(String value) {
+    return (NoScript)super.setStyleString(value);
+  }
+
+  @Override
+  public NoScript setStyle(String styleAttribute, String styleValue) {
+    return (NoScript)super.setStyle(styleAttribute, styleValue);
+  }
+
+  @Override
+  public NoScript setTitle(String value) {
+    return (NoScript)super.setTitle(value);
+  }
+
+  @Override
+  public NoScript setData(String attributeName, String value) {
+    return (NoScript)super.setData(attributeName, value);
+  }
+
+  @Override
+  public NoScript setAttributeValueAsLong(String name, long value) {
+    return (NoScript)super.setAttributeValueAsLong(name, value);
+  }
+
+  @Override
+  public NoScript setText(String text) {
+    return (NoScript)super.setText(text);
   }
 
 }

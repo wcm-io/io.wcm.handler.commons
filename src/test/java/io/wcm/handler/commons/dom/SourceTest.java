@@ -19,6 +19,7 @@
  */
 package io.wcm.handler.commons.dom;
 
+import static io.wcm.handler.commons.dom.TestUtil.assertDefaultMethods;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
@@ -41,6 +42,11 @@ class SourceTest {
     assertEquals("type1", source.getType());
     assertEquals("srcset1", source.getSrcSet());
     assertEquals("sizes1", source.getSizes());
+  }
+
+  @Test
+  void testDefaultMethods() {
+    assertDefaultMethods(new Source());
   }
 
 }

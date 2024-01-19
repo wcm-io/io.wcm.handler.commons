@@ -19,6 +19,7 @@
  */
 package io.wcm.handler.commons.dom;
 
+import static io.wcm.handler.commons.dom.TestUtil.assertDefaultMethods;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
@@ -29,6 +30,11 @@ class FigureTest {
   void testSimpleAttributes() throws Exception {
     Figure figure = new Figure();
     assertEquals("figure", figure.getName());
+  }
+
+  @Test
+  void testDefaultMethods() {
+    assertDefaultMethods(new Figure());
   }
 
 }

@@ -19,6 +19,7 @@
  */
 package io.wcm.handler.commons.dom;
 
+import static io.wcm.handler.commons.dom.TestUtil.assertDefaultMethods;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
@@ -54,6 +55,11 @@ class AnchorTest {
 
     anchor.setAccessKey("key1");
     assertEquals("key1", anchor.getAccessKey());
+  }
+
+  @Test
+  void testDefaultMethods() {
+    assertDefaultMethods(new Anchor());
   }
 
 }

@@ -19,6 +19,7 @@
  */
 package io.wcm.handler.commons.dom;
 
+import static io.wcm.handler.commons.dom.TestUtil.assertDefaultMethods;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
@@ -53,6 +54,11 @@ class AreaTest {
 
     area.setCoords("coords1");
     assertEquals("coords1", area.getCoords());
+  }
+
+  @Test
+  void testDefaultMethods() {
+    assertDefaultMethods(new Area());
   }
 
 }
