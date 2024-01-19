@@ -110,9 +110,7 @@ class HtxPageExtensionMapperTest {
 
     when(request.getRequestDispatcher(anyString())).thenReturn(null);
 
-    assertThrows(ServletException.class, () -> {
-      underTest.doGet(request, response);
-    });
+    assertThrows(ServletException.class, () -> underTest.doGet(request, response));
   }
 
 }
