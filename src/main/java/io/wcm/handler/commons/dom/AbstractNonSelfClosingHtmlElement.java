@@ -27,6 +27,7 @@ import org.osgi.annotation.versioning.ConsumerType;
  * @param <T> Class derived from HtmlElement
  */
 @ConsumerType
+@SuppressWarnings("java:S110") // # parent inheritance
 public abstract class AbstractNonSelfClosingHtmlElement<T extends HtmlElement> extends HtmlElement<T> {
   private static final long serialVersionUID = 1L;
 

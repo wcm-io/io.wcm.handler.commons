@@ -25,6 +25,7 @@ import org.osgi.annotation.versioning.ProviderType;
  * Html figure (figure) element.
  */
 @ProviderType
+@SuppressWarnings("java:S110") // # parent inheritance
 public final class Figure extends AbstractNonSelfClosingHtmlElement<Figure> {
   private static final long serialVersionUID = 1L;
 

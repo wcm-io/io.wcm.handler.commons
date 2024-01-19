@@ -41,6 +41,7 @@ import org.osgi.annotation.versioning.ProviderType;
  * </pre>
  */
 @ProviderType
+@SuppressWarnings("java:S110") // # parent inheritance
 public final class Script extends AbstractNonSelfClosingHtmlElement<Script> {
   private static final long serialVersionUID = 1L;
 

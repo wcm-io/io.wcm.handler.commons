@@ -25,6 +25,7 @@ import org.osgi.annotation.versioning.ProviderType;
  * Html noscript element.
  */
 @ProviderType
+@SuppressWarnings("java:S110") // # parent inheritance
 public final class NoScript extends AbstractNonSelfClosingHtmlElement<NoScript> {
 
   private static final long serialVersionUID = 1L;
