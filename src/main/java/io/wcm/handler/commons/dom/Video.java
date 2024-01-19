@@ -26,7 +26,7 @@ import org.osgi.annotation.versioning.ProviderType;
  */
 @ProviderType
 @SuppressWarnings("java:S110") // # parent inheritance
-public final class Video extends AbstractNonSelfClosingHtmlElement<Video> {
+public final class Video extends AbstractNonSelfClosingHtmlElement {
   private static final long serialVersionUID = 1L;
 
   private static final String ELEMENT_NAME = "video";
@@ -208,6 +208,58 @@ public final class Video extends AbstractNonSelfClosingHtmlElement<Video> {
   public Video setWidth(long value) {
     setAttributeValueAsLong(ATTRIBUTE_WIDTH, value);
     return this;
+  }
+
+  // -- overwrite methods for builder pattern with covariant return types --
+
+  @Override
+  protected Video setEmptyAttributeValueAsBoolean(String attributeName, boolean value) {
+    return (Video)super.setEmptyAttributeValueAsBoolean(attributeName, value);
+  }
+
+  @Override
+  public Video setId(String value) {
+    return (Video)super.setId(value);
+  }
+
+  @Override
+  public Video setCssClass(String value) {
+    return (Video)super.setCssClass(value);
+  }
+
+  @Override
+  public Video addCssClass(String value) {
+    return (Video)super.addCssClass(value);
+  }
+
+  @Override
+  public Video setStyleString(String value) {
+    return (Video)super.setStyleString(value);
+  }
+
+  @Override
+  public Video setStyle(String styleAttribute, String styleValue) {
+    return (Video)super.setStyle(styleAttribute, styleValue);
+  }
+
+  @Override
+  public Video setTitle(String value) {
+    return (Video)super.setTitle(value);
+  }
+
+  @Override
+  public Video setData(String attributeName, String value) {
+    return (Video)super.setData(attributeName, value);
+  }
+
+  @Override
+  public Video setAttributeValueAsLong(String name, long value) {
+    return (Video)super.setAttributeValueAsLong(name, value);
+  }
+
+  @Override
+  public Video setText(String text) {
+    return (Video)super.setText(text);
   }
 
 }

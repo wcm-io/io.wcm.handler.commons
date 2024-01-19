@@ -36,7 +36,7 @@ class HtmlElementTest {
 
   private static final Namespace NS_TEST = Namespace.getNamespace("test", "http://test");
 
-  private HtmlElement<?> underTest;
+  private HtmlElement underTest;
 
   @BeforeEach
   void setUp() {

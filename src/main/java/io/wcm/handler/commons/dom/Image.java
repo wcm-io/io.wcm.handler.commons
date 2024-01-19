@@ -26,7 +26,7 @@ import org.osgi.annotation.versioning.ProviderType;
  */
 @ProviderType
 @SuppressWarnings("java:S110") // # parent inheritance
-public final class Image extends HtmlElement<Image> {
+public final class Image extends HtmlElement {
   private static final long serialVersionUID = 1L;
 
   private static final String ELEMENT_NAME = "img";
@@ -275,6 +275,58 @@ public final class Image extends HtmlElement<Image> {
   public Image setUseMap(String value) {
     setAttribute(ATTRIBUTE_USEMAP, value);
     return this;
+  }
+
+  // -- overwrite methods for builder pattern with covariant return types --
+
+  @Override
+  protected Image setEmptyAttributeValueAsBoolean(String attributeName, boolean value) {
+    return (Image)super.setEmptyAttributeValueAsBoolean(attributeName, value);
+  }
+
+  @Override
+  public Image setId(String value) {
+    return (Image)super.setId(value);
+  }
+
+  @Override
+  public Image setCssClass(String value) {
+    return (Image)super.setCssClass(value);
+  }
+
+  @Override
+  public Image addCssClass(String value) {
+    return (Image)super.addCssClass(value);
+  }
+
+  @Override
+  public Image setStyleString(String value) {
+    return (Image)super.setStyleString(value);
+  }
+
+  @Override
+  public Image setStyle(String styleAttribute, String styleValue) {
+    return (Image)super.setStyle(styleAttribute, styleValue);
+  }
+
+  @Override
+  public Image setTitle(String value) {
+    return (Image)super.setTitle(value);
+  }
+
+  @Override
+  public Image setData(String attributeName, String value) {
+    return (Image)super.setData(attributeName, value);
+  }
+
+  @Override
+  public Image setAttributeValueAsLong(String name, long value) {
+    return (Image)super.setAttributeValueAsLong(name, value);
+  }
+
+  @Override
+  public Image setText(String text) {
+    return (Image)super.setText(text);
   }
 
 }

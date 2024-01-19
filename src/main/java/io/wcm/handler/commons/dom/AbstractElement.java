@@ -33,11 +33,10 @@ import org.osgi.annotation.versioning.ConsumerType;
 /**
  * Generic DOM element.
  * This element implementation is derived from JDOM element implementation.
- * @param <T> Class extending Element
  */
 @SuppressWarnings("unchecked")
 @ConsumerType
-public abstract class AbstractElement<T extends AbstractElement> extends org.jdom2.Element {
+public abstract class AbstractElement extends org.jdom2.Element {
   private static final long serialVersionUID = 1L;
 
   // matches all control chars ([\x00-\x1F\x7F]), that are invalid inside XML
@@ -77,9 +76,9 @@ public abstract class AbstractElement<T extends AbstractElement> extends org.jdo
    * @param value Attribute value as long
    * @return Self reference
    */
-  public final T setAttributeValueAsLong(String name, long value) {
+  public AbstractElement setAttributeValueAsLong(String name, long value) {
     setAttribute(name, Long.toString(value));
-    return (T)this;
+    return this;
   }
 
   /**
@@ -108,9 +107,9 @@ public abstract class AbstractElement<T extends AbstractElement> extends org.jdo
    * @param value Attribute value as integer
    * @return Self reference
    */
-  public final T setAttributeValueAsInteger(String name, int value) {
+  public final AbstractElement setAttributeValueAsInteger(String name, int value) {
     setAttribute(name, Integer.toString(value));
-    return (T)this;
+    return this;
   }
 
   /**
@@ -190,11 +189,11 @@ public abstract class AbstractElement<T extends AbstractElement> extends org.jdo
   /**
    * Appends the child to the end of the element's content list.
    * Returns not the element itself (contrary to addContent), but a reference to the newly added element.
-   * @param <ElementType> Type that extends Element
+   * @param <T> Type that extends Element
    * @param element Element to add. Null values are ignored.
    * @return The added element.
    */
-  public final <ElementType extends AbstractElement> ElementType add(ElementType element) {
+  public final <T extends AbstractElement> T add(T element) {
     this.addContent(element);
     return element;
   }
@@ -281,14 +280,14 @@ public abstract class AbstractElement<T extends AbstractElement> extends org.jdo
   }
 
   @Override
-  public String toString() {
+  public final String toString() {
     return new XMLOutputter().outputString(this);
   }
 
   /**
    * @return Content of element serialized as string
    */
-  public String toStringContentOnly() {
+  public final String toStringContentOnly() {
     return new XMLOutputter().outputElementContentString(this);
   }
 

@@ -26,7 +26,7 @@ import org.osgi.annotation.versioning.ProviderType;
  */
 @ProviderType
 @SuppressWarnings("java:S110") // # parent inheritance
-public final class Span extends AbstractNonSelfClosingHtmlElement<Span> {
+public final class Span extends AbstractNonSelfClosingHtmlElement {
   private static final long serialVersionUID = 1L;
 
   private static final String ELEMENT_NAME = "span";
@@ -45,6 +45,58 @@ public final class Span extends AbstractNonSelfClosingHtmlElement<Span> {
   public Span(String text) {
     super(ELEMENT_NAME);
     setText(text);
+  }
+
+  // -- overwrite methods for builder pattern with covariant return types --
+
+  @Override
+  protected Span setEmptyAttributeValueAsBoolean(String attributeName, boolean value) {
+    return (Span)super.setEmptyAttributeValueAsBoolean(attributeName, value);
+  }
+
+  @Override
+  public Span setId(String value) {
+    return (Span)super.setId(value);
+  }
+
+  @Override
+  public Span setCssClass(String value) {
+    return (Span)super.setCssClass(value);
+  }
+
+  @Override
+  public Span addCssClass(String value) {
+    return (Span)super.addCssClass(value);
+  }
+
+  @Override
+  public Span setStyleString(String value) {
+    return (Span)super.setStyleString(value);
+  }
+
+  @Override
+  public Span setStyle(String styleAttribute, String styleValue) {
+    return (Span)super.setStyle(styleAttribute, styleValue);
+  }
+
+  @Override
+  public Span setTitle(String value) {
+    return (Span)super.setTitle(value);
+  }
+
+  @Override
+  public Span setData(String attributeName, String value) {
+    return (Span)super.setData(attributeName, value);
+  }
+
+  @Override
+  public Span setAttributeValueAsLong(String name, long value) {
+    return (Span)super.setAttributeValueAsLong(name, value);
+  }
+
+  @Override
+  public Span setText(String text) {
+    return (Span)super.setText(text);
   }
 
 }

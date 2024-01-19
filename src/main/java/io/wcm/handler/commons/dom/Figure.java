@@ -26,7 +26,7 @@ import org.osgi.annotation.versioning.ProviderType;
  */
 @ProviderType
 @SuppressWarnings("java:S110") // # parent inheritance
-public final class Figure extends AbstractNonSelfClosingHtmlElement<Figure> {
+public final class Figure extends AbstractNonSelfClosingHtmlElement {
   private static final long serialVersionUID = 1L;
 
   private static final String ELEMENT_NAME = "figure";
@@ -36,6 +36,58 @@ public final class Figure extends AbstractNonSelfClosingHtmlElement<Figure> {
    */
   public Figure() {
     super(ELEMENT_NAME);
+  }
+
+  // -- overwrite methods for builder pattern with covariant return types --
+
+  @Override
+  protected Figure setEmptyAttributeValueAsBoolean(String attributeName, boolean value) {
+    return (Figure)super.setEmptyAttributeValueAsBoolean(attributeName, value);
+  }
+
+  @Override
+  public Figure setId(String value) {
+    return (Figure)super.setId(value);
+  }
+
+  @Override
+  public Figure setCssClass(String value) {
+    return (Figure)super.setCssClass(value);
+  }
+
+  @Override
+  public Figure addCssClass(String value) {
+    return (Figure)super.addCssClass(value);
+  }
+
+  @Override
+  public Figure setStyleString(String value) {
+    return (Figure)super.setStyleString(value);
+  }
+
+  @Override
+  public Figure setStyle(String styleAttribute, String styleValue) {
+    return (Figure)super.setStyle(styleAttribute, styleValue);
+  }
+
+  @Override
+  public Figure setTitle(String value) {
+    return (Figure)super.setTitle(value);
+  }
+
+  @Override
+  public Figure setData(String attributeName, String value) {
+    return (Figure)super.setData(attributeName, value);
+  }
+
+  @Override
+  public Figure setAttributeValueAsLong(String name, long value) {
+    return (Figure)super.setAttributeValueAsLong(name, value);
+  }
+
+  @Override
+  public Figure setText(String text) {
+    return (Figure)super.setText(text);
   }
 
 }
