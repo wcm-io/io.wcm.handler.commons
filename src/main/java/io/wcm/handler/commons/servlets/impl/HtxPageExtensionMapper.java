@@ -111,9 +111,7 @@ public class HtxPageExtensionMapper extends SlingSafeMethodsServlet {
       requestDispatcher.include(request, response);
     }
     else {
-      String referrer = request.getHeader("Referrer");
-      log.error("Unable to dispatch proxy request for {} referrer={}", request.getRequestURI(), referrer);
-      throw new ServletException("No Content");
+      throw new ServletException("No Request Dispatcher.");
     }
 
   }
