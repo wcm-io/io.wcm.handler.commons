@@ -25,7 +25,8 @@ import org.osgi.annotation.versioning.ProviderType;
  * Html area element.
  */
 @ProviderType
-public final class Area extends HtmlElement<Area> {
+@SuppressWarnings("java:S110") // # parent inheritance
+public final class Area extends HtmlElement {
   private static final long serialVersionUID = 1L;
 
   private static final String ELEMENT_NAME = "area";
@@ -188,6 +189,58 @@ public final class Area extends HtmlElement<Area> {
   public Area setCoords(String value) {
     setAttribute(ATTRIBUTE_COORDS, value);
     return this;
+  }
+
+  // -- overwrite methods for builder pattern with covariant return types --
+
+  @Override
+  protected Area setEmptyAttributeValueAsBoolean(String attributeName, boolean value) {
+    return (Area)super.setEmptyAttributeValueAsBoolean(attributeName, value);
+  }
+
+  @Override
+  public Area setId(String value) {
+    return (Area)super.setId(value);
+  }
+
+  @Override
+  public Area setCssClass(String value) {
+    return (Area)super.setCssClass(value);
+  }
+
+  @Override
+  public Area addCssClass(String value) {
+    return (Area)super.addCssClass(value);
+  }
+
+  @Override
+  public Area setStyleString(String value) {
+    return (Area)super.setStyleString(value);
+  }
+
+  @Override
+  public Area setStyle(String styleAttribute, String styleValue) {
+    return (Area)super.setStyle(styleAttribute, styleValue);
+  }
+
+  @Override
+  public Area setTitle(String value) {
+    return (Area)super.setTitle(value);
+  }
+
+  @Override
+  public Area setData(String attributeName, String value) {
+    return (Area)super.setData(attributeName, value);
+  }
+
+  @Override
+  public Area setAttributeValueAsLong(String name, long value) {
+    return (Area)super.setAttributeValueAsLong(name, value);
+  }
+
+  @Override
+  public Area setText(String text) {
+    return (Area)super.setText(text);
   }
 
 }

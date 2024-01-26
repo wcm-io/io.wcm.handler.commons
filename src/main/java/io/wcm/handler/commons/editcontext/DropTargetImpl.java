@@ -24,6 +24,7 @@ import java.util.Map;
 
 import org.apache.sling.commons.json.JSONException;
 import org.apache.sling.commons.json.io.JSONWriter;
+import org.jetbrains.annotations.NotNull;
 import org.osgi.annotation.versioning.ProviderType;
 
 import com.day.cq.wcm.api.components.DropTarget;
@@ -32,6 +33,10 @@ import com.day.cq.wcm.api.components.DropTarget;
  * {@link DropTarget} implementation.
  */
 @ProviderType
+/*
+ * This depends on the (deprecated) Sling Commons JSON API, which is tied into AEM public API:
+ * https://developer.adobe.com/experience-manager/reference-materials/6-5/javadoc/com/day/cq/commons/JSONItem.html
+ */
 @SuppressWarnings("deprecation")
 public final class DropTargetImpl implements DropTarget {
 
@@ -48,7 +53,7 @@ public final class DropTargetImpl implements DropTarget {
    * @param name drop target name
    * @param propertyName property name
    */
-  public DropTargetImpl(String name, String propertyName) {
+  public DropTargetImpl(@NotNull String name, @NotNull String propertyName) {
     this.name = name;
     this.id = CSS_CLASS_PREFIX + this.name;
     this.propertyName = propertyName;
@@ -95,7 +100,7 @@ public final class DropTargetImpl implements DropTarget {
    * @param values the DD groups.
    * @return this
    */
-  public DropTargetImpl setGroups(String[] values) {
+  public DropTargetImpl setGroups(String @NotNull [] values) {
     this.groups = values;
     return this;
   }
@@ -113,7 +118,7 @@ public final class DropTargetImpl implements DropTarget {
    * @param values the accept patterns
    * @return this
    */
-  public DropTargetImpl setAccept(String[] values) {
+  public DropTargetImpl setAccept(String @NotNull [] values) {
     this.accept = values;
     return this;
   }
@@ -131,7 +136,7 @@ public final class DropTargetImpl implements DropTarget {
    * @param value a map of additional parameters.
    * @return this
    */
-  public DropTargetImpl setParameters(Map<String, String> value) {
+  public DropTargetImpl setParameters(@NotNull Map<String, String> value) {
     this.parameters = value;
     return this;
   }

@@ -25,7 +25,8 @@ import org.osgi.annotation.versioning.ProviderType;
  * Html anchor (a) element.
  */
 @ProviderType
-public final class Anchor extends AbstractNonSelfClosingHtmlElement<Anchor> {
+@SuppressWarnings("java:S110") // # parent inheritance
+public final class Anchor extends AbstractNonSelfClosingHtmlElement {
   private static final long serialVersionUID = 1L;
 
   private static final String ELEMENT_NAME = "a";
@@ -151,6 +152,58 @@ public final class Anchor extends AbstractNonSelfClosingHtmlElement<Anchor> {
   public Anchor setAccessKey(String value) {
     setAttribute(ATTRIBUTE_ACCESSKEY, value);
     return this;
+  }
+
+  // -- overwrite methods for builder pattern with covariant return types --
+
+  @Override
+  protected Anchor setEmptyAttributeValueAsBoolean(String attributeName, boolean value) {
+    return (Anchor)super.setEmptyAttributeValueAsBoolean(attributeName, value);
+  }
+
+  @Override
+  public Anchor setId(String value) {
+    return (Anchor)super.setId(value);
+  }
+
+  @Override
+  public Anchor setCssClass(String value) {
+    return (Anchor)super.setCssClass(value);
+  }
+
+  @Override
+  public Anchor addCssClass(String value) {
+    return (Anchor)super.addCssClass(value);
+  }
+
+  @Override
+  public Anchor setStyleString(String value) {
+    return (Anchor)super.setStyleString(value);
+  }
+
+  @Override
+  public Anchor setStyle(String styleAttribute, String styleValue) {
+    return (Anchor)super.setStyle(styleAttribute, styleValue);
+  }
+
+  @Override
+  public Anchor setTitle(String value) {
+    return (Anchor)super.setTitle(value);
+  }
+
+  @Override
+  public Anchor setData(String attributeName, String value) {
+    return (Anchor)super.setData(attributeName, value);
+  }
+
+  @Override
+  public Anchor setAttributeValueAsLong(String name, long value) {
+    return (Anchor)super.setAttributeValueAsLong(name, value);
+  }
+
+  @Override
+  public Anchor setText(String text) {
+    return (Anchor)super.setText(text);
   }
 
 }

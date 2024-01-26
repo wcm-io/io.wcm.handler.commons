@@ -25,7 +25,8 @@ import org.osgi.annotation.versioning.ProviderType;
  * Html map element.
  */
 @ProviderType
-public final class Map extends AbstractNonSelfClosingHtmlElement<Map> {
+@SuppressWarnings("java:S110") // # parent inheritance
+public final class Map extends AbstractNonSelfClosingHtmlElement {
   private static final long serialVersionUID = 1L;
 
   private static final String ELEMENT_NAME = "map";
@@ -54,6 +55,58 @@ public final class Map extends AbstractNonSelfClosingHtmlElement<Map> {
   public Map setMapName(String value) {
     setAttribute(ATTRIBUTE_NAME, value);
     return this;
+  }
+
+  // -- overwrite methods for builder pattern with covariant return types --
+
+  @Override
+  protected Map setEmptyAttributeValueAsBoolean(String attributeName, boolean value) {
+    return (Map)super.setEmptyAttributeValueAsBoolean(attributeName, value);
+  }
+
+  @Override
+  public Map setId(String value) {
+    return (Map)super.setId(value);
+  }
+
+  @Override
+  public Map setCssClass(String value) {
+    return (Map)super.setCssClass(value);
+  }
+
+  @Override
+  public Map addCssClass(String value) {
+    return (Map)super.addCssClass(value);
+  }
+
+  @Override
+  public Map setStyleString(String value) {
+    return (Map)super.setStyleString(value);
+  }
+
+  @Override
+  public Map setStyle(String styleAttribute, String styleValue) {
+    return (Map)super.setStyle(styleAttribute, styleValue);
+  }
+
+  @Override
+  public Map setTitle(String value) {
+    return (Map)super.setTitle(value);
+  }
+
+  @Override
+  public Map setData(String attributeName, String value) {
+    return (Map)super.setData(attributeName, value);
+  }
+
+  @Override
+  public Map setAttributeValueAsLong(String name, long value) {
+    return (Map)super.setAttributeValueAsLong(name, value);
+  }
+
+  @Override
+  public Map setText(String text) {
+    return (Map)super.setText(text);
   }
 
 }

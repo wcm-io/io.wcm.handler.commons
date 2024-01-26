@@ -24,10 +24,10 @@ import org.osgi.annotation.versioning.ConsumerType;
 /**
  * Html element wrapper tags that must not rendered self-closing to avoid problems in certain browsers.
  * Mosf of the elements that extend from this class are block-level elements, but not all of them.
- * @param <T> Class derived from HtmlElement
  */
 @ConsumerType
-public abstract class AbstractNonSelfClosingHtmlElement<T extends HtmlElement> extends HtmlElement<T> {
+@SuppressWarnings("java:S110") // # parent inheritance
+public abstract class AbstractNonSelfClosingHtmlElement extends HtmlElement {
   private static final long serialVersionUID = 1L;
 
   /**

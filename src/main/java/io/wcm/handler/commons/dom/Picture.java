@@ -25,7 +25,8 @@ import org.osgi.annotation.versioning.ProviderType;
  * Html picture element.
  */
 @ProviderType
-public final class Picture extends AbstractNonSelfClosingHtmlElement<Picture> {
+@SuppressWarnings("java:S110") // # parent inheritance
+public final class Picture extends AbstractNonSelfClosingHtmlElement {
   private static final long serialVersionUID = 1L;
 
   private static final String ELEMENT_NAME = "picture";
@@ -35,6 +36,58 @@ public final class Picture extends AbstractNonSelfClosingHtmlElement<Picture> {
    */
   public Picture() {
     super(ELEMENT_NAME);
+  }
+
+  // -- overwrite methods for builder pattern with covariant return types --
+
+  @Override
+  protected Picture setEmptyAttributeValueAsBoolean(String attributeName, boolean value) {
+    return (Picture)super.setEmptyAttributeValueAsBoolean(attributeName, value);
+  }
+
+  @Override
+  public Picture setId(String value) {
+    return (Picture)super.setId(value);
+  }
+
+  @Override
+  public Picture setCssClass(String value) {
+    return (Picture)super.setCssClass(value);
+  }
+
+  @Override
+  public Picture addCssClass(String value) {
+    return (Picture)super.addCssClass(value);
+  }
+
+  @Override
+  public Picture setStyleString(String value) {
+    return (Picture)super.setStyleString(value);
+  }
+
+  @Override
+  public Picture setStyle(String styleAttribute, String styleValue) {
+    return (Picture)super.setStyle(styleAttribute, styleValue);
+  }
+
+  @Override
+  public Picture setTitle(String value) {
+    return (Picture)super.setTitle(value);
+  }
+
+  @Override
+  public Picture setData(String attributeName, String value) {
+    return (Picture)super.setData(attributeName, value);
+  }
+
+  @Override
+  public Picture setAttributeValueAsLong(String name, long value) {
+    return (Picture)super.setAttributeValueAsLong(name, value);
+  }
+
+  @Override
+  public Picture setText(String text) {
+    return (Picture)super.setText(text);
   }
 
 }

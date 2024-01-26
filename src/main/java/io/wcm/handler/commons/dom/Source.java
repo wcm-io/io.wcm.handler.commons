@@ -25,7 +25,8 @@ import org.osgi.annotation.versioning.ProviderType;
  * Html source (source) element.
  */
 @ProviderType
-public class Source extends HtmlElement<Source> {
+@SuppressWarnings("java:S110") // # parent inheritance
+public class Source extends HtmlElement {
   private static final long serialVersionUID = 1L;
 
   private static final String ELEMENT_NAME = "source";
@@ -131,6 +132,58 @@ public class Source extends HtmlElement<Source> {
   public Source setType(String value) {
     setAttribute(ATTRIBUTE_TYPE, value);
     return this;
+  }
+
+  // -- overwrite methods for builder pattern with covariant return types --
+
+  @Override
+  protected Source setEmptyAttributeValueAsBoolean(String attributeName, boolean value) {
+    return (Source)super.setEmptyAttributeValueAsBoolean(attributeName, value);
+  }
+
+  @Override
+  public Source setId(String value) {
+    return (Source)super.setId(value);
+  }
+
+  @Override
+  public Source setCssClass(String value) {
+    return (Source)super.setCssClass(value);
+  }
+
+  @Override
+  public Source addCssClass(String value) {
+    return (Source)super.addCssClass(value);
+  }
+
+  @Override
+  public Source setStyleString(String value) {
+    return (Source)super.setStyleString(value);
+  }
+
+  @Override
+  public Source setStyle(String styleAttribute, String styleValue) {
+    return (Source)super.setStyle(styleAttribute, styleValue);
+  }
+
+  @Override
+  public Source setTitle(String value) {
+    return (Source)super.setTitle(value);
+  }
+
+  @Override
+  public Source setData(String attributeName, String value) {
+    return (Source)super.setData(attributeName, value);
+  }
+
+  @Override
+  public Source setAttributeValueAsLong(String name, long value) {
+    return (Source)super.setAttributeValueAsLong(name, value);
+  }
+
+  @Override
+  public Source setText(String text) {
+    return (Source)super.setText(text);
   }
 
 }

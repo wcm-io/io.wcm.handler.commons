@@ -19,12 +19,14 @@
  */
 package io.wcm.handler.commons.servlets.impl;
 
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.verifyNoMoreInteractions;
 import static org.mockito.Mockito.when;
 
 import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletResponse;
 
 import org.apache.sling.api.SlingHttpServletRequest;
@@ -100,6 +102,15 @@ class HtxPageExtensionMapperTest {
     verify(request).getRequestDispatcher("/my/path.sel1.sel2.html/suffix1/suffix2.html");
     verify(requestDispatcher).include(request, response);
     verifyNoMoreInteractions(response);
+  }
+
+  @Test
+  void testNoRequestDispatcher() throws Exception {
+    HtxPageExtensionMapper underTest = context.registerInjectActivateService(new HtxPageExtensionMapper(), "enabled", true);
+
+    when(request.getRequestDispatcher(anyString())).thenReturn(null);
+
+    assertThrows(ServletException.class, () -> underTest.doGet(request, response));
   }
 
 }

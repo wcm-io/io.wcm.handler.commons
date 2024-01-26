@@ -19,6 +19,7 @@
  */
 package io.wcm.handler.commons.dom;
 
+import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -35,14 +36,13 @@ class HtmlElementTest {
 
   private static final Namespace NS_TEST = Namespace.getNamespace("test", "http://test");
 
-  private HtmlElement<?> underTest;
+  private HtmlElement underTest;
 
   @BeforeEach
   void setUp() {
     underTest = new HtmlElement("test");
   }
 
-  @SuppressWarnings("deprecation")
   @Test
   void testName() {
     assertEquals("test", underTest.getName());
@@ -59,22 +59,24 @@ class HtmlElementTest {
 
   @Test
   void testAddContent() {
-    underTest.addContent(Set.of(new Image(), new Div()));
-    underTest.addContent((Collection)null);
+    assertDoesNotThrow(() -> {
+      underTest.addContent(Set.of(new Image(), new Div()));
+      underTest.addContent((Collection)null);
 
-    underTest.addContent(new Image());
-    underTest.addContent((Content)null);
+      underTest.addContent(new Image());
+      underTest.addContent((Content)null);
 
-    underTest.addContent("text");
-    underTest.addContent((String)null);
+      underTest.addContent("text");
+      underTest.addContent((String)null);
 
-    underTest.addContent(0, Set.of(new Image(), new Div()));
-    underTest.addContent(0, (Collection)null);
+      underTest.addContent(0, Set.of(new Image(), new Div()));
+      underTest.addContent(0, (Collection)null);
 
-    underTest.addContent(0, new Image());
-    underTest.addContent(0, (Content)null);
+      underTest.addContent(0, new Image());
+      underTest.addContent(0, (Content)null);
 
-    underTest.add(new Image());
+      underTest.add(new Image());
+    });
   }
 
   @Test
@@ -88,11 +90,13 @@ class HtmlElementTest {
 
   @Test
   void testSetAttribute() {
-    underTest.setAttribute("attr1", "value1");
-    underTest.setAttribute("attr1", null);
+    assertDoesNotThrow(() -> {
+      underTest.setAttribute("attr1", "value1");
+      underTest.setAttribute("attr1", null);
 
-    underTest.setAttribute("attr1", "value1", NS_TEST);
-    underTest.setAttribute("attr1", null, NS_TEST);
+      underTest.setAttribute("attr1", "value1", NS_TEST);
+      underTest.setAttribute("attr1", null, NS_TEST);
+    });
   }
 
   @Test
@@ -153,27 +157,29 @@ class HtmlElementTest {
 
   @Test
   void testFactory() {
-    underTest.create("sub1");
-    underTest.createComment("text");
-    underTest.createDiv();
-    underTest.createSpan();
-    underTest.createSpan("text");
-    underTest.createAnchor();
-    underTest.createAnchor("href");
-    underTest.createAnchor("href", "target");
-    underTest.createImage();
-    underTest.createImage("src");
-    underTest.createImage("src", "alt");
-    underTest.createImage("src", 20, 30);
-    underTest.createImage("src", "alt", 20, 30);
-    underTest.createScript();
-    underTest.createScript("text");
-    underTest.createNoScript();
-    underTest.createFigure();
-    underTest.createFigCaption();
-    underTest.createVideo();
-    underTest.createAudio();
-    underTest.createSource();
+    assertDoesNotThrow(() -> {
+      underTest.create("sub1");
+      underTest.createComment("text");
+      underTest.createDiv();
+      underTest.createSpan();
+      underTest.createSpan("text");
+      underTest.createAnchor();
+      underTest.createAnchor("href");
+      underTest.createAnchor("href", "target");
+      underTest.createImage();
+      underTest.createImage("src");
+      underTest.createImage("src", "alt");
+      underTest.createImage("src", 20, 30);
+      underTest.createImage("src", "alt", 20, 30);
+      underTest.createScript();
+      underTest.createScript("text");
+      underTest.createNoScript();
+      underTest.createFigure();
+      underTest.createFigCaption();
+      underTest.createVideo();
+      underTest.createAudio();
+      underTest.createSource();
+    });
   }
 
 }
