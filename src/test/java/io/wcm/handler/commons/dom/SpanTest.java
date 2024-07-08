@@ -27,7 +27,7 @@ import org.junit.jupiter.api.Test;
 class SpanTest {
 
   @Test
-  void testSimpleAttributes() throws Exception {
+  void testSimpleAttributes() {
     Span span1 = new Span();
     assertEquals("span", span1.getName());
 

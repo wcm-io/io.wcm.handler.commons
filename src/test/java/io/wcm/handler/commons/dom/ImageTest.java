@@ -48,7 +48,7 @@ class ImageTest {
   }
 
   @Test
-  void testSimpleAttributes() throws Exception {
+  void testSimpleAttributes() {
     Image img = new Image();
     img.setSrc("src1");
     img.setAlt("alt1");

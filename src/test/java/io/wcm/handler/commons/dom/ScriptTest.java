@@ -28,7 +28,7 @@ import org.junit.jupiter.api.Test;
 class ScriptTest {
 
   @Test
-  void testSimpleAttributes() throws Exception {
+  void testSimpleAttributes() {
     Script script = new Script();
     assertEquals("script", script.getName());
 

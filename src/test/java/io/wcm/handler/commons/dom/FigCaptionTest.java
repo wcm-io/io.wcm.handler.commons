@@ -27,7 +27,7 @@ import org.junit.jupiter.api.Test;
 class FigCaptionTest {
 
   @Test
-  void testSimpleAttributes() throws Exception {
+  void testSimpleAttributes() {
     FigCaption figCaption = new FigCaption();
     assertEquals("figcaption", figCaption.getName());
   }

@@ -200,10 +200,10 @@ public class HtmlElement extends AbstractHtmlElementFactory {
     // Serialize style string
     StringBuilder styleString = new StringBuilder();
     for (Map.Entry<String, String> style : styleMap.entrySet()) {
-      styleString.append(style.getKey());
-      styleString.append(':');
-      styleString.append(style.getValue());
-      styleString.append(';');
+      styleString.append(style.getKey())
+          .append(':')
+          .append(style.getValue())
+          .append(';');
     }
     setStyleString(styleString.toString());
     return this;

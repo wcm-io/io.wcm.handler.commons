@@ -26,7 +26,7 @@ import org.junit.jupiter.api.Test;
 class HtmlCommentTest {
 
   @Test
-  void testSimpleAttributes() throws Exception {
+  void testSimpleAttributes() {
     HtmlComment comment = new HtmlComment("text1");
     assertEquals("text1", comment.getText());
     assertEquals("<!--text1-->", comment.toString());

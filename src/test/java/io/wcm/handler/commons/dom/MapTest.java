@@ -27,7 +27,7 @@ import org.junit.jupiter.api.Test;
 class MapTest {
 
   @Test
-  void testSimpleAttributes() throws Exception {
+  void testSimpleAttributes() {
     Map map = new Map();
     assertEquals("map", map.getName());
 

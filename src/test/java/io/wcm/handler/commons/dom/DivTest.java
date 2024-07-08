@@ -27,7 +27,7 @@ import org.junit.jupiter.api.Test;
 class DivTest {
 
   @Test
-  void testSimpleAttributes() throws Exception {
+  void testSimpleAttributes() {
     Div div = new Div();
     assertEquals("div", div.getName());
   }

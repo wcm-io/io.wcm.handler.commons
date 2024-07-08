@@ -27,7 +27,7 @@ import org.junit.jupiter.api.Test;
 class PictureTest {
 
   @Test
-  void testSimpleAttributes() throws Exception {
+  void testSimpleAttributes() {
     Picture picture = new Picture();
     assertEquals("picture", picture.getName());
   }

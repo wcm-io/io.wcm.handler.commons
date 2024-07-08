@@ -105,7 +105,7 @@ class HtxPageExtensionMapperTest {
   }
 
   @Test
-  void testNoRequestDispatcher() throws Exception {
+  void testNoRequestDispatcher() {
     HtxPageExtensionMapper underTest = context.registerInjectActivateService(new HtxPageExtensionMapper(), "enabled", true);
 
     when(request.getRequestDispatcher(anyString())).thenReturn(null);

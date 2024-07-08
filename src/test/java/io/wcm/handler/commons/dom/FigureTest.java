@@ -27,7 +27,7 @@ import org.junit.jupiter.api.Test;
 class FigureTest {
 
   @Test
-  void testSimpleAttributes() throws Exception {
+  void testSimpleAttributes() {
     Figure figure = new Figure();
     assertEquals("figure", figure.getName());
   }

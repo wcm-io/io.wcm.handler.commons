@@ -27,7 +27,7 @@ import org.junit.jupiter.api.Test;
 class SourceTest {
 
   @Test
-  void testSimpleAttributes() throws Exception {
+  void testSimpleAttributes() {
     Source source = new Source();
     assertEquals("source", source.getName());
 

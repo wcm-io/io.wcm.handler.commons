@@ -27,7 +27,7 @@ import org.junit.jupiter.api.Test;
 class NoScriptTest {
 
   @Test
-  void testSimpleAttributes() throws Exception {
+  void testSimpleAttributes() {
     NoScript noScript = new NoScript();
     assertEquals("noscript", noScript.getName());
   }

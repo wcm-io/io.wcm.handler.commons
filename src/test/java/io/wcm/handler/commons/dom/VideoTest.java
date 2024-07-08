@@ -27,7 +27,7 @@ import org.junit.jupiter.api.Test;
 class VideoTest {
 
   @Test
-  void testSimpleAttributes() throws Exception {
+  void testSimpleAttributes() {
     Video video = new Video();
     assertEquals("video", video.getName());
 
