@@ -37,7 +37,7 @@ class AnchorTest {
   }
 
   @Test
-  void testSimpleAttributes() throws Exception {
+  void testSimpleAttributes() {
     Anchor anchor = new Anchor("href");
     assertEquals("a", anchor.getName());
 

@@ -27,7 +27,7 @@ import org.junit.jupiter.api.Test;
 class AudioTest {
 
   @Test
-  void testSimpleAttributes() throws Exception {
+  void testSimpleAttributes() {
     Audio audio = new Audio();
     assertEquals("audio", audio.getName());
 

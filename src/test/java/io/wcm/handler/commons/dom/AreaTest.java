@@ -27,7 +27,7 @@ import org.junit.jupiter.api.Test;
 class AreaTest {
 
   @Test
-  void testSimpleAttributes() throws Exception {
+  void testSimpleAttributes() {
     Area area = new Area();
     assertEquals("area", area.getName());
 
