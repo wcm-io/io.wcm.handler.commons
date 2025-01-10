@@ -40,4 +40,4 @@ Sources: https://github.com/wcm-io/io.wcm.handler.commons
 
 
 [apidocs]: apidocs/
-[changelog]: changes-report.html
+[changelog]: changes.html
