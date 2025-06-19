@@ -213,10 +213,8 @@ public abstract class AbstractElement extends org.jdom2.Element {
   }
 
   /**
-   * <p>
    * This sets an attribute value for this element. Any existing attribute with the same name and namespace URI is
    * removed.
-   * </p>
    * @param name name of the attribute to set
    * @param value value of the attribute to set
    * @param ns namespace of the attribute to set
@@ -241,10 +239,8 @@ public abstract class AbstractElement extends org.jdom2.Element {
   }
 
   /**
-   * <p>
    * This sets an attribute value for this element. Any existing attribute with the same name and namespace URI is
    * removed.
-   * </p>
    * @param name name of the attribute to set
    * @param value value of the attribute to set
    * @return this element modified

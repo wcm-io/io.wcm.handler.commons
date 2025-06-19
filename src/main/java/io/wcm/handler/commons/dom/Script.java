@@ -28,6 +28,7 @@ import org.osgi.annotation.versioning.ProviderType;
 /**
  * Html script element.
  * This script block is initialized by default for "text/javascript" type.
+ *
  * <p>
  * Script blocks are generated in a special XHTML conformant way, to work around some browser XHTML JavaScript problems:
  * </p>
