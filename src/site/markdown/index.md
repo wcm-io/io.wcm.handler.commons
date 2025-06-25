@@ -34,6 +34,11 @@ To use this module you have to deploy also:
 | [wcm.io WCM Granite UI Extensions](https://repo1.maven.org/maven2/io/wcm/io.wcm.wcm.ui.granite/) | [![Maven Central](https://img.shields.io/maven-central/v/io.wcm/io.wcm.wcm.ui.granite)](https://repo1.maven.org/maven2/io/wcm/io.wcm.wcm.ui.granite/) |
 
 
+### Usage of deprecated APIs
+
+This module uses the API `org.apache.sling.commons.json` which is marked as deprecated in AEM. However, it's also baked into the AEM product API itself ([DropTarget](https://developer.adobe.com/experience-manager/reference-materials/cloud-service/javadoc/com/day/cq/wcm/api/components/DropTarget.html) extends [JSONItem](https://developer.adobe.com/experience-manager/reference-materials/cloud-service/javadoc/com/day/cq/commons/JSONItem.html) which references [JSONWriter](https://developer.adobe.com/experience-manager/reference-materials/cloud-service/javadoc/org/apache/sling/commons/json/io/JSONWriter.html)). So this is unavoidable, unless Adobe changes the AEM product API.
+
+
 ### GitHub Repository
 
 Sources: https://github.com/wcm-io/io.wcm.handler.commons
