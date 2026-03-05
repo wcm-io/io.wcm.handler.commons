@@ -37,6 +37,7 @@ import org.osgi.annotation.versioning.ConsumerType;
 @SuppressWarnings("unchecked")
 @ConsumerType
 public abstract class AbstractElement extends org.jdom2.Element {
+
   private static final long serialVersionUID = 1L;
 
   // matches all control chars ([\x00-\x1F\x7F]), that are invalid inside XML

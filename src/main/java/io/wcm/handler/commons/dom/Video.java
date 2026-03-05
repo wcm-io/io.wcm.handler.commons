@@ -27,6 +27,7 @@ import org.osgi.annotation.versioning.ProviderType;
 @ProviderType
 @SuppressWarnings("java:S110") // # parent inheritance
 public final class Video extends AbstractNonSelfClosingHtmlElement {
+
   private static final long serialVersionUID = 1L;
 
   private static final String ELEMENT_NAME = "video";

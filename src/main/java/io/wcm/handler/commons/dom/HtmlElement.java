@@ -32,6 +32,7 @@ import org.osgi.annotation.versioning.ConsumerType;
 @ConsumerType
 @SuppressWarnings("java:S110") // # parent inheritance
 public class HtmlElement extends AbstractHtmlElementFactory {
+
   private static final long serialVersionUID = 1L;
 
   private static final String ATTRIBUTE_ID = "id";
@@ -201,9 +202,9 @@ public class HtmlElement extends AbstractHtmlElementFactory {
     StringBuilder styleString = new StringBuilder();
     for (Map.Entry<String, String> style : styleMap.entrySet()) {
       styleString.append(style.getKey())
-          .append(':')
-          .append(style.getValue())
-          .append(';');
+        .append(':')
+        .append(style.getValue())
+        .append(';');
     }
     setStyleString(styleString.toString());
     return this;

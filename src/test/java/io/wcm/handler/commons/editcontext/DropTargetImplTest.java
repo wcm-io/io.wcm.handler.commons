@@ -78,7 +78,7 @@ class DropTargetImplTest {
             + "\"accept\":[\"image/gif\"],"
             + "\"groups\":[\"group1\",\"group2\"],"
             + "\"params\":{\"param1\":\"value1\",\"param2\":\"value2\"}}",
-            writer.toString());
+        writer.toString());
   }
 
 }

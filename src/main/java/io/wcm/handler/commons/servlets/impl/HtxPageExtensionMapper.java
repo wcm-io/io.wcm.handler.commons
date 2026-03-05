@@ -53,10 +53,10 @@ import io.wcm.wcm.commons.contenttype.FileExtension;
 @SlingServletResourceTypes(
     resourceTypes = NameConstants.NT_PAGE,
     methods = HttpConstants.METHOD_GET,
-    extensions = FileExtension.HTML_UNCACHED
-)
+    extensions = FileExtension.HTML_UNCACHED)
 @Designate(ocd = HtxPageExtensionMapper.Config.class)
 public class HtxPageExtensionMapper extends SlingSafeMethodsServlet {
+
   private static final long serialVersionUID = 1L;
 
   @ObjectClassDefinition(name = "wcm.io htx Page Extension Mapper",
