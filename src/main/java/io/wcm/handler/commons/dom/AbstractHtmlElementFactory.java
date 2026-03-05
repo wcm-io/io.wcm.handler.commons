@@ -28,6 +28,7 @@ import org.osgi.annotation.versioning.ConsumerType;
  */
 @ConsumerType
 public abstract class AbstractHtmlElementFactory extends AbstractElement {
+
   private static final long serialVersionUID = 1L;
 
   /**
